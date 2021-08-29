@@ -109,9 +109,56 @@ ul {
   font-weight: 700;
 }
 
+.styles__images-block {
+  position: relative;
+  z-index: 1;
+}
+
+.styles__images-block:hover {
+  z-index: 0;
+}
+
+.styles__link {
+  position: absolute;
+  background: white;
+  color: black;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.styles__link::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid black;
+  top: -20px;
+  left: 10px;
+}
+
+.styles__link:hover {
+  z-index: 2;
+}
+
 @media screen and (min-width: 767px) {
   .styles__description {
     width: 370px;
+  }
+  .styles__link {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .styles__link::before {
+    width: 25px;
+    height: 25px;
+    top: -30px;
+    left: 15px;
+  }
+  .styles__link:hover {
+    font-size: 24px;
+    line-height: 30px;
   }
 }
 
@@ -130,6 +177,21 @@ ul {
   transform: translateY(-29px);
 }
 
+.styles__link--edinburgh-one {
+  top: 100px;
+  left: 30px;
+}
+
+.styles__link--edinburgh-two {
+  top: 190px;
+  left: 90px;
+}
+
+.styles__link--edinburgh-three {
+  top: 180px;
+  left: 200px;
+}
+
 @media screen and (min-width: 767px) {
   .styles__container--edinburgh {
     background: linear-gradient(to right, #ebe6e1 570px, white 570px);
@@ -142,6 +204,18 @@ ul {
   }
   .styles__description--edinburgh {
     margin-left: 66px;
+  }
+  .styles__link--edinburgh-one {
+    top: 120px;
+    left: 80px;
+  }
+  .styles__link--edinburgh-two {
+    top: 340px;
+    left: 160px;
+  }
+  .styles__link--edinburgh-three {
+    top: 320px;
+    left: 350px;
   }
 }
 
@@ -157,6 +231,18 @@ ul {
   }
   .styles__description--edinburgh {
     margin-left: 300px;
+  }
+  .styles__link--edinburgh-one {
+    top: 240px;
+    left: 160px;
+  }
+  .styles__link--edinburgh-two {
+    top: 520px;
+    left: 250px;
+  }
+  .styles__link--edinburgh-three {
+    top: 500px;
+    left: 520px;
   }
 }
 
