@@ -1,1 +1,276 @@
+/* Fonts */
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"),
+       url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"),
+       url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* Global */
+
+body {
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  padding: 0;
+  margin: 0 auto;
+  width: 320px;
+}
+
+@media screen and (min-width: 767px) {
+  .container {
+    width: 767px;
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* Sub-header */
+
+@media screen and (max-width: 766px) {
+  .sub-header-outer {
+    background-color: #ebe6e1;
+  }
+}
+
+.mobile-description {
+  margin: 0;
+  padding: 10px;
+}
+
+@media screen and (min-width: 767px) {
+  .mobile-description {
+    display: none;
+  }
+}
+
+/* List general */
+
+.styles__container {
+  position: relative;
+}
+
+.styles__list {
+  padding: 0;
+}
+
+.styles__item {
+  margin-top: 70px;
+}
+
+.styles__image-polaroid {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.styles__description {
+  font-size: 14px;
+  line-height: 17px;
+  padding: 10px;
+  margin-top: 0;
+}
+
+.styles__title {
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 767px) {
+  .styles__description {
+    width: 370px;
+  }
+}
+
+/* Edinburgh specific */
+
+.styles__item--edinburgh {
+  background: linear-gradient(to right, #ebe6e1 50%, white 50%);
+}
+
+.styles__container--edinburgh {
+  background: linear-gradient(to right, #ebe6e1 262px, white 262px);
+}
+
+.styles__image-polaroid--edinburgh {
+  float: right;
+  transform: translateY(-29px);
+}
+
+@media screen and (min-width: 767px) {
+  .styles__container--edinburgh {
+    background: linear-gradient(to right, #ebe6e1 570px, white 570px);
+  }
+  .styles__image-polaroid--edinburgh {
+    float: none;
+    position: absolute;
+    top: 90px;
+    right: 0;
+  }
+  .styles__description--edinburgh {
+    margin-left: 66px;
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .styles__item--edinburgh {
+    background: white;
+  }
+  .styles__container--edinburgh {
+    background: linear-gradient(to right, white 200px, #ebe6e1 200px, #ebe6e1 770px, white 770px);
+  }
+  .styles__image-polaroid--edinburgh {
+    top: 160px;
+  }
+  .styles__description--edinburgh {
+    margin-left: 300px;
+  }
+}
+
+/* New York specific */
+
+.styles__item--new-york {
+  background: linear-gradient(to right, white 50%, #ebe6e1 50%);
+}
+
+.styles__container--new-york {
+  background: linear-gradient(to right, white 62px, #ebe6e1 62px);
+}
+
+.styles__image-polaroid--new-york {
+  position: absolute;
+  left: -42px;
+  top: 186px;
+}
+
+.styles__description--new-york {
+  width: 190px;
+  margin-right: 0;
+  margin-left: auto;
+  text-align: right;
+}
+
+@media screen and (min-width: 767px) {
+  .styles__container--new-york {
+    background: linear-gradient(to right, white 198px, #ebe6e1 198px);
+  }
+  .styles__image-main--new-york {
+    margin-left: 196px;
+  }
+  .styles__image-polaroid--new-york {
+    left: 0;
+    top: 120px;
+  }
+  .styles__description--new-york {
+    width: 370px;
+    margin-right: 66px;
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .styles__item--new-york {
+    background: white;
+  }
+  .styles__container--new-york {
+    background: linear-gradient(to right, white 400px, #ebe6e1 400px, #ebe6e1 970px, white 970px);
+  }
+  .styles__image-main--new-york {
+    margin-left: 300px;
+  }
+  .styles__image-polaroid--new-york {
+    top: 200px;
+  }
+  .styles__description--new-york {
+    margin-left: 500px;
+    padding-bottom: 60px;
+  }
+}
+
+/* Windsor specific */
+
+.styles__item--windsor {
+  background: linear-gradient(to right, white 50%, #ebe6e1 50%);
+}
+
+.styles__container--windsor {
+  background: linear-gradient(to right, white 94px, #ebe6e1 94px);
+  padding-top: 20px;
+}
+
+.styles__image-polaroid--windsor {
+  position: absolute;
+  top: -30px;
+  left: 0;
+}
+
+.styles__description--windsor {
+  text-align: right;
+}
+
+@media screen and (min-width: 767px) {
+  .styles__container--windsor {
+    background: linear-gradient(to right, white 198px, #ebe6e1 198px);
+    padding-top: 0;
+  }
+  .styles__image-main--windsor {
+    margin-left: 196px;
+  }
+  .styles__image-polaroid--windsor {
+    top: 120px;
+  }
+  .styles__description--windsor {
+    margin-right: 66px;
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .styles__item--windsor {
+    background: white;
+  }
+  .styles__container--windsor {
+    background: linear-gradient(to right, white 500px, #ebe6e1 500px, #ebe6e1 1070px, white 1070px);
+  }
+  .styles__image-main--windsor {
+    margin-left: 300px;
+  }
+  .styles__image-polaroid--windsor {
+    top: 200px;
+  }
+  .styles__description--windsor {
+    margin-left: 600px;
+  }
+}
