@@ -1,5 +1,7 @@
 /* Fonts */
 
+
+
 @font-face {
   font-family: "Montserrat";
   src: url("../fonts/Montserrat-Regular.woff2") format("woff2"),
@@ -18,7 +20,11 @@
   font-display: swap;
 }
 
+
+
 /* Global */
+
+
 
 body {
   min-width: 320px;
@@ -41,25 +47,44 @@ ul {
   list-style-type: none;
 }
 
-.container {
+.container-phr {
+  width: 320px;
   padding: 0;
   margin: 0 auto;
-  width: 320px;
 }
+
+.styles__total-look {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 30px;
+}
+
 
 @media screen and (min-width: 767px) {
-  .container {
+  .container-phr {
     width: 767px;
   }
-}
-
-@media screen and (min-width: 1170px) {
-  .container {
-    width: 1170px;
+  .styles__total-look {
+    gap: 20px;
+    margin-top: 60px;
   }
 }
 
+
+@media screen and (min-width: 1170px) {
+  .container-phr {
+    width: 1170px;
+  }
+  .styles__total-look {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+
 /* Sub-header */
+
 
 @media screen and (max-width: 766px) {
   .sub-header-outer {
@@ -67,10 +92,16 @@ ul {
   }
 }
 
+
+.sub-header-inner {
+  padding: 0 auto;
+}
+
 .mobile-description {
   margin: 0;
   padding: 10px;
 }
+
 
 @media screen and (min-width: 767px) {
   .mobile-description {
@@ -78,7 +109,11 @@ ul {
   }
 }
 
+
+
 /* List general */
+
+
 
 .styles__container {
   position: relative;
@@ -111,36 +146,35 @@ ul {
 
 .styles__images-block {
   position: relative;
-  z-index: 1;
-}
-
-.styles__images-block:hover {
-  z-index: 0;
 }
 
 .styles__link {
+  text-decoration: none;
   position: absolute;
   background: white;
   color: black;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 10px;
+  line-height: 12px;
 }
 
 .styles__link::before {
   content: "";
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background-color: white;
-  border: 1px solid black;
-  top: -20px;
-  left: 10px;
+  left: calc(50% - 5px);
 }
 
-.styles__link:hover {
-  z-index: 2;
+.styles__link--upper::before {
+  top: 15px;
 }
+
+.styles__link--lower::before {
+  top: -15px;
+}
+
 
 @media screen and (min-width: 767px) {
   .styles__description {
@@ -153,16 +187,36 @@ ul {
   .styles__link::before {
     width: 25px;
     height: 25px;
+    left: calc(50% - 13px);
+  }
+  .styles__link--upper::before {
+    top: 30px;
+  }
+  .styles__link--lower::before {
     top: -30px;
-    left: 15px;
+  }
+}
+
+
+@media screen and (min-width: 1170px) {
+  .styles__images-block {
+    z-index: 1;
+  }
+  .styles__images-block:hover {
+    z-index: 0;
   }
   .styles__link:hover {
+    z-index: 2;
     font-size: 24px;
     line-height: 30px;
   }
 }
 
+
+
 /* Edinburgh specific */
+
+
 
 .styles__item--edinburgh {
   background: linear-gradient(to right, #ebe6e1 50%, white 50%);
@@ -175,22 +229,29 @@ ul {
 .styles__image-polaroid--edinburgh {
   float: right;
   transform: translateY(-29px);
+  margin-bottom: -25px;
 }
 
-.styles__link--edinburgh-one {
+.styles__link--edinburgh-hat {
+  top: 20px;
+  left: 70px;
+}
+
+.styles__link--edinburgh-umbrella {
   top: 100px;
   left: 30px;
 }
 
-.styles__link--edinburgh-two {
-  top: 190px;
-  left: 90px;
+.styles__link--edinburgh-bag-one {
+  top: 180px;
+  left: 160px;
 }
 
-.styles__link--edinburgh-three {
-  top: 180px;
+.styles__link--edinburgh-bag-two {
+  top: 300px;
   left: 200px;
 }
+
 
 @media screen and (min-width: 767px) {
   .styles__container--edinburgh {
@@ -201,23 +262,29 @@ ul {
     position: absolute;
     top: 90px;
     right: 0;
+    margin-bottom: 0;
   }
   .styles__description--edinburgh {
     margin-left: 66px;
   }
-  .styles__link--edinburgh-one {
-    top: 120px;
-    left: 80px;
+  .styles__link--edinburgh-hat {
+    top: 30px;
+    left: 120px;
   }
-  .styles__link--edinburgh-two {
-    top: 340px;
-    left: 160px;
+  .styles__link--edinburgh-umbrella {
+    top: 140px;
+    left: 60px;
   }
-  .styles__link--edinburgh-three {
-    top: 320px;
-    left: 350px;
+  .styles__link--edinburgh-bag-one {
+    top: 330px;
+    left: 290px;
+  }
+  .styles__link--edinburgh-bag-two {
+    top: 270px;
+    left: 510px;
   }
 }
+
 
 @media screen and (min-width: 1170px) {
   .styles__item--edinburgh {
@@ -232,21 +299,29 @@ ul {
   .styles__description--edinburgh {
     margin-left: 300px;
   }
-  .styles__link--edinburgh-one {
-    top: 240px;
-    left: 160px;
+  .styles__link--edinburgh-hat {
+    top: 75px;
+    left: 230px;
   }
-  .styles__link--edinburgh-two {
-    top: 520px;
-    left: 250px;
+  .styles__link--edinburgh-umbrella {
+    top: 200px;
+    left: 100px;
   }
-  .styles__link--edinburgh-three {
+  .styles__link--edinburgh-bag-one {
     top: 500px;
-    left: 520px;
+    left: 480px;
+  }
+  .styles__link--edinburgh-bag-two {
+    top: 440px;
+    left: 820px;
   }
 }
 
+
+
 /* New York specific */
+
+
 
 .styles__item--new-york {
   background: linear-gradient(to right, white 50%, #ebe6e1 50%);
@@ -269,6 +344,45 @@ ul {
   text-align: right;
 }
 
+.styles__link--new-york-hat-one {
+  top: -5px;
+  left: 190px;
+}
+
+.styles__link--new-york-gloves-one {
+  top: 45px;
+  left: 210px;
+}
+
+.styles__link--new-york-scarf {
+  top: 100px;
+  left: 165px;
+}
+
+.styles__link--new-york-gloves-two {
+  top: 125px;
+  left: 120px;
+}
+
+.styles__link--new-york-hat-two {
+  top: 170px;
+  left: 115px;
+}
+
+.styles__link--new-york-bag-one {
+  top: 108px;
+  left: 65px;
+}
+
+.styles__link--new-york-bag-two {
+  top: 285px;
+  left: 10px;
+}
+
+.styles__link--new-york-gloves-one::before {
+  left: 65%;
+}
+
 @media screen and (min-width: 767px) {
   .styles__container--new-york {
     background: linear-gradient(to right, white 198px, #ebe6e1 198px);
@@ -283,6 +397,34 @@ ul {
   .styles__description--new-york {
     width: 370px;
     margin-right: 66px;
+  }
+  .styles__link--new-york-hat-one {
+    top: -10px;
+    left: 550px;
+  }
+  .styles__link--new-york-gloves-one {
+    top: 80px;
+    left: 550px;
+  }
+  .styles__link--new-york-scarf {
+    top: 180px;
+    left: 480px;
+  }
+  .styles__link--new-york-gloves-two {
+    top: 210px;
+    left: 400px;
+  }
+  .styles__link--new-york-hat-two {
+    top: 300px;
+    left: 390px;
+  }
+  .styles__link--new-york-bag-one {
+    top: 260px;
+    left: 30px;
+  }
+  .styles__link--new-york-bag-two {
+    top: 330px;
+    left: 130px;
   }
 }
 
@@ -302,6 +444,34 @@ ul {
   .styles__description--new-york {
     margin-left: 500px;
     padding-bottom: 60px;
+  }
+  .styles__link--new-york-hat-one {
+    top: 5px;
+    left: 870px;
+  }
+  .styles__link--new-york-gloves-one {
+    top: 140px;
+    left: 920px;
+  }
+  .styles__link--new-york-scarf {
+    top: 260px;
+    left: 780px;
+  }
+  .styles__link--new-york-gloves-two {
+    top: 350px;
+    left: 670px;
+  }
+  .styles__link--new-york-hat-two {
+    top: 450px;
+    left: 650px;
+  }
+  .styles__link--new-york-bag-one {
+    top: 430px;
+    left: 100px;
+  }
+  .styles__link--new-york-bag-two {
+    top: 520px;
+    left: 250px;
   }
 }
 
@@ -326,6 +496,11 @@ ul {
   text-align: right;
 }
 
+.styles__link--windsor-bag {
+  top: 200px;
+  left: 180px;
+}
+
 @media screen and (min-width: 767px) {
   .styles__container--windsor {
     background: linear-gradient(to right, white 198px, #ebe6e1 198px);
@@ -340,6 +515,10 @@ ul {
   .styles__description--windsor {
     margin-right: 66px;
     margin-left: auto;
+  }
+  .styles__link--windsor-bag {
+    top: 340px;
+    left: 500px;
   }
 }
 
@@ -358,5 +537,617 @@ ul {
   }
   .styles__description--windsor {
     margin-left: 600px;
+  }
+  .styles__link--windsor-bag {
+    top: 500px;
+    left: 780px;
+  }
+}
+
+/* London specific */
+
+.styles__item--london {
+  background: linear-gradient(to right, #ebe6e1 50%, white 50%);
+}
+
+.styles__container--london {
+  background: linear-gradient(to right, #ebe6e1 298px, white 298px);
+}
+
+.styles__image-polaroid--london {
+  float: left;
+  margin-left: 11px;
+  margin-right: 11px;
+  margin-bottom: -35px;
+  transform: translateY(-40px);
+}
+
+.styles__description--london {
+  text-align: right;
+}
+
+.styles__link--london-gloves {
+  top: 60px;
+  left: 80px;
+}
+
+.styles__link--london-bag {
+  top: 150px;
+  left: 200px;
+}
+
+.styles__link--london-scarf {
+  top: 240px;
+  left: 70px;
+}
+
+@media screen and (min-width: 767px) {
+  .styles__item--london {
+    margin-top: 130px;
+    background: linear-gradient(to right, white 50%, #ebe6e1 50%);
+  }
+  .styles__container--london {
+    background: linear-gradient(to right, white 66px, #ebe6e1 66px);
+  }
+  .styles__image-main--london {
+    margin-top: -60px;
+    margin-left: 196px;
+  }
+  .styles__image-polaroid--london {
+    float: none;
+    position: absolute;
+    margin: 0;
+    top: 100px;
+    left: 0;
+  }
+  .styles__description--london {
+    margin-left: 330px;
+  }
+  .styles__link--london-gloves {
+    top: 40px;
+    left: 330px;
+  }
+  .styles__link--london-bag {
+    top: 200px;
+    left: 550px;
+  }
+  .styles__link--london-scarf {
+    top: 250px;
+    left: 120px;
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .styles__item--london {
+    background: white;
+  }
+  .styles__container--london {
+    background: linear-gradient(to right, white 200px, #ebe6e1 200px, #ebe6e1 1070px, white 1070px);
+  }
+  .styles__image-main--london {
+    margin-left: 300px;
+  }
+  .styles__image-polaroid--london {
+    top: 160px;
+  }
+  .styles__description--london {
+    margin-left: 500px;
+  }
+  .styles__link--london-gloves {
+    top: 80px;
+    left: 560px;
+  }
+  .styles__link--london-bag {
+    top: 350px;
+    left: 900px;
+  }
+  .styles__link--london-scarf {
+    top: 400px;
+    left: 230px;
+  }
+}
+
+/* Milan specific */
+
+.styles__item--milan {
+  background: linear-gradient(#ebe6e1 361px, white 361px);
+}
+
+.styles__description--milan {
+  padding: 30px 10px;
+}
+
+@media screen and (max-width: 766px) {
+  .styles__image-main--milan {
+    margin-bottom: 150px;
+  }
+}
+
+.styles__image-polaroid--milan {
+  position: absolute;
+  right: 0;
+  top: 100px;
+}
+
+.styles__link--milan-scarf-one {
+  top: 320px;
+  left: 215px;
+}
+
+.styles__link--milan-hat {
+  top: 180px;
+  left: 130px;
+}
+
+.styles__link--milan-umbrella {
+  top: 230px;
+  left: 40px;
+}
+
+.styles__link--milan-scarf-two {
+  top: 260px;
+  left: 70px;
+}
+
+.styles__link--milan-bag-one {
+  top: 300px;
+  left: 80px;
+}
+
+.styles__link--milan-bag-two {
+  top: 400px;
+  left: 200px;
+}
+
+@media screen and (min-width: 767px) {
+  .styles__item--milan {
+    background: linear-gradient(to right, white 50%, #ebe6e1 50%);
+  }
+  .styles__container--milan {
+    background: linear-gradient(to right, white 197px, #ebe6e1 197px);
+    padding-bottom: 20px;
+  }
+  .styles__description--milan {
+    margin-left: 260px;
+  }
+  .styles__image-polaroid--milan {
+    right: 0;
+    top: -45px;
+  }
+  .styles__link--milan-scarf-one {
+    top: 230px;
+    left: 580px;
+  }
+  .styles__link--milan-hat {
+    top: 180px;
+    left: 280px;
+  }
+  .styles__link--milan-umbrella {
+    top: 250px;
+    left: 80px;
+  }
+  .styles__link--milan-scarf-two {
+    top: 310px;
+    left: 120px;
+  }
+  .styles__link--milan-bag-one {
+    top: 400px;
+    left: 150px;
+  }
+  .styles__link--milan-bag-two {
+    top: 500px;
+    left: 270px;
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .styles__container--milan {
+    background: linear-gradient(to right, white 200px, #ebe6e1 200px);
+    padding-bottom: 40px;
+  }
+  .styles__description--milan {
+    margin-left: 300px;
+  }
+  .styles__image-polaroid--milan {
+    top: -40px;
+  }
+  .styles__link--milan-scarf-one {
+    top: 270px;
+    left: 900px;
+  }
+  .styles__link--milan-hat {
+    top: 200px;
+    left: 450px;
+  }
+  .styles__link--milan-umbrella {
+    top: 280px;
+    left: 180px;
+  }
+  .styles__link--milan-scarf-two {
+    top: 350px;
+    left: 250px;
+  }
+  .styles__link--milan-bag-one {
+    top: 520px;
+    left: 280px;
+  }
+  .styles__link--milan-bag-two {
+    top: 680px;
+    left: 450px;
+  }
+}
+
+/* Amsterdam specific */
+
+.styles__item--amsterdam {
+  background: linear-gradient(to right, #ebe6e1 50%, white 50%);
+}
+
+.styles__container--amsterdam {
+  background: linear-gradient(to right, #ebe6e1 257px, white 257px);
+}
+
+.styles__description--amsterdam {
+  padding-bottom: 20px;
+  text-align: right;
+}
+
+.styles__image-polaroid--amsterdam {
+  position: absolute;
+  left: 0;
+  top: -42px;
+}
+
+.styles__link--amsterdam-hat {
+  top: 200px;
+  left: 50px;
+}
+
+.styles__link--amsterdam-scarf {
+  top: 260px;
+  left: 70px;
+}
+
+.styles__link--amsterdam-gloves {
+  top: 330px;
+  left: 130px;
+}
+
+.styles__link--amsterdam-bag {
+  top: 430px;
+  left: 120px;
+}
+
+@media screen and (min-width: 767px) {
+  .styles__item--amsterdam {
+    background: linear-gradient(#ebe6e1 480px, white 480px);
+  }
+  .styles__container--amsterdam {
+    background: linear-gradient(#ebe6e1 480px, white 480px);
+  }
+  .styles__image-main--amsterdam {
+    margin-left: 198px;
+  }
+  .styles__image-polaroid--amsterdam {
+    top: -90px;
+  }
+  .styles__description--amsterdam {
+    padding-bottom: 0;
+    margin-right: 66px;
+    margin-left: auto;
+  }
+  .styles__link--amsterdam-hat {
+    top: 60px;
+    left: 140px;
+  }
+  .styles__link--amsterdam-scarf {
+    top: 220px;
+    left: 80px;
+  }
+  .styles__link--amsterdam-gloves {
+    top: 300px;
+    left: 300px;
+  }
+  .styles__link--amsterdam-bag {
+    top: 430px;
+    left: 350px;
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .styles__item--amsterdam {
+    background: linear-gradient(to right, white 50%, #ebe6e1 50%);
+  }
+  .styles__container--amsterdam {
+    background: linear-gradient(to right, white 300px, #ebe6e1 300px);
+  }
+  .styles__image-main--amsterdam {
+    margin-left: 300px;
+  }
+  .styles__image-polaroid--amsterdam {
+    top: -80px;
+  }
+  .styles__description--amsterdam {
+    margin-left: 700px;
+  }
+  .styles__link--amsterdam-hat {
+    top: 80px;
+    left: 250px;
+  }
+  .styles__link--amsterdam-scarf {
+    top: 300px;
+    left: 200px;
+  }
+  .styles__link--amsterdam-gloves {
+    top: 470px;
+    left: 500px;
+  }
+  .styles__link--amsterdam-bag {
+    top: 650px;
+    left: 550px;
+  }
+}
+
+/* Zurich specific */
+
+.styles__container--zurich {
+  background: linear-gradient(to right, white 62px, #ebe6e1 62px, #ebe6e1 310px, white 310px);
+}
+
+.styles__image-polaroid--zurich {
+  position: absolute;
+  left: -35px;
+  top: -57px;
+}
+
+.styles__description--zurich {
+  text-align: right;
+}
+
+.styles__link--zurich-hat {
+  top: -5px;
+  left: 100px;
+}
+
+.styles__link--zurich-bag-one {
+  top: 150px;
+  left: 170px;
+}
+
+.styles__link--zurich-bag-two {
+  top: 200px;
+  left: 100px;
+}
+
+.styles__link--zurich-scarf {
+  top: 0;
+  left: 0;
+}
+
+.styles__link--zurich-gloves {
+  top: 60px;
+  left: 0;
+}
+
+@media screen and (max-width: 766px) {
+  .styles__link--zurich-gloves::before {
+    left: 30%;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .styles__item--zurich {
+    background: linear-gradient(to right, white 50%, #ebe6e1 50%);
+  }
+  .styles__container--zurich {
+    background: linear-gradient(to right, white 198px, #ebe6e1 198px);
+  }
+  .styles__image-main--zurich {
+    margin-left: 198px;
+  }
+  .styles__image-polaroid--zurich {
+    left: 0;
+    top: 75px;
+  }
+  .styles__description--zurich {
+    margin-left: 330px;
+  }
+  .styles__link--zurich-hat {
+    top: -10px;
+    left: 370px;
+  }
+  .styles__link--zurich-bag-one {
+    top: 250px;
+    left: 450px;
+  }
+  .styles__link--zurich-bag-two {
+    top: 350px;
+    left: 350px;
+  }
+  .styles__link--zurich-scarf {
+    top: 220px;
+    left: 30px;
+  }
+  .styles__link--zurich-gloves {
+    top: 325px;
+    left: 20px;
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .styles__item--zurich {
+    background: white;
+  }
+  .styles__container--zurich {
+    background: linear-gradient(to right, white 300px, #ebe6e1 300px, #ebe6e1 970px, white 970px);
+  }
+  .styles__image-main--zurich {
+    margin-left: 300px;
+  }
+  .styles__image-polaroid--zurich {
+    top: 110px;
+  }
+  .styles__description--zurich {
+    margin-left: 500px;
+  }
+  .styles__link--zurich-hat {
+    top: 5px;
+    left: 600px;
+  }
+  .styles__link--zurich-bag-one {
+    top: 400px;
+    left: 750px;
+  }
+  .styles__link--zurich-bag-two {
+    top: 520px;
+    left: 600px;
+  }
+  .styles__link--zurich-scarf {
+    top: 350px;
+    left: 150px;
+  }
+  .styles__link--zurich-gloves {
+    top: 500px;
+    left: 100px;
+  }
+}
+
+/* Berlin specific */
+
+.styles__item--berlin {
+  background: linear-gradient(to right, #ebe6e1 50%, white 50%);
+}
+
+.styles__container--berlin {
+  background: linear-gradient(to right, #ebe6e1 205px, white 205px);
+}
+
+.styles__image-polaroid--berlin {
+  position: absolute;
+  right: 0;
+  top: 65px;
+}
+
+.styles__description {
+  margin-top: 40px;
+}
+
+.styles__link--berlin-scarf-one {
+  top: 80px;
+  left: 70px;
+}
+
+.styles__link--berlin-scarf-two {
+  top: 55px;
+  left: 125px;
+}
+
+.styles__link--berlin-gloves-one {
+  top: 110px;
+  left: 20px;
+}
+
+.styles__link--berlin-bag-one {
+  top: 180px;
+  left: 10px;
+}
+
+.styles__link--berlin-hat {
+  top: 70px;
+  left: 200px;
+}
+
+.styles__link--berlin-gloves-two {
+  top: 140px;
+  left: 210px;
+}
+
+.styles__link--berlin-bag-two {
+  top: 190px;
+  left: 220px;
+}
+
+@media screen and (min-width: 767px) {
+  .styles__container--berlin {
+    background: linear-gradient(to right, #ebe6e1 505px, white 505px);
+  }
+  .styles__image-polaroid--berlin {
+    top: 105px;
+  }
+  .styles__description--berlin {
+    margin-top: 20px;
+    margin-left: 65px;
+  }
+  .styles__link--berlin-scarf-one {
+    top: 140px;
+    left: 140px;
+  }
+  .styles__link--berlin-scarf-two {
+    top: 120px;
+    left: 300px;
+  }
+  .styles__link--berlin-gloves-one {
+    top: 210px;
+    left: 25px;
+  }
+  .styles__link--berlin-bag-one {
+    top: 350px;
+    left: 10px;
+  }
+  .styles__link--berlin-hat {
+    top: 110px;
+    left: 530px;
+  }
+  .styles__link--berlin-gloves-two {
+    top: 280px;
+    left: 550px;
+  }
+  .styles__link--berlin-bag-two {
+    top: 370px;
+    left: 570px;
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .styles__item--berlin {
+    background: white;
+  }
+  .styles__container--berlin {
+    background: linear-gradient(to right, white 200px, #ebe6e1 200px, #ebe6e1 770px, white 770px);
+  }
+  .styles__image-polaroid--berlin {
+    top: 160px;
+  }
+  .styles__description--berlin {
+    margin-left: 300px;
+    padding-bottom: 50px;
+  }
+  .styles__link--berlin-scarf-one {
+    top: 180px;
+    left: 240px;
+  }
+  .styles__link--berlin-scarf-two {
+    top: 200px;
+    left: 500px;
+  }
+  .styles__link--berlin-gloves-one {
+    top: 360px;
+    left: 90px;
+  }
+  .styles__link--berlin-bag-one {
+    top: 535px;
+    left: 100px;
+  }
+  .styles__link--berlin-hat {
+    top: 180px;
+    left: 850px;
+  }
+  .styles__link--berlin-gloves-two {
+    top: 400px;
+    left: 900px;
+  }
+  .styles__link--berlin-bag-two {
+    top: 570px;
+    left: 950px;
   }
 }
